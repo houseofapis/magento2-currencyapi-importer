@@ -1,0 +1,7 @@
+{
+    "valid": false,
+    "error": {
+        "code": 400,
+        "message": "You did not supply an API key"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "valid": false,
+    "error": {
+        "code": 406,
+        "message": "The requested base currency does not exist on our service"
+    }
+}

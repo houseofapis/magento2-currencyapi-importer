@@ -1,0 +1,73 @@
+{
+  "name": "houseofapis/magento2-currencyapi-importer",
+  "description": "Magento 2 Currency Exchange Rate Importer for CurrencyApi.net - Real-time currency rates with automatic updates",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": ["MIT"],
+  "authors": [
+    {
+      "name": "CurrencyApi.net",
+      "email": "support@currencyapi.net",
+      "homepage": "https://currencyapi.net"
+    }
+  ],
+  "keywords": [
+    "magento2",
+    "magento",
+    "currency",
+    "exchange-rates",
+    "currencyapi",
+    "currency-api",
+    "real-time-rates",
+    "forex",
+    "currency-converter",
+    "ecommerce"
+  ],
+  "homepage": "https://currencyapi.net",
+  "support": {
+    "email": "support@currencyapi.net",
+    "issues": "https://github.com/houseofapis/magento2-currencyapi-importer/issues",
+    "source": "https://github.com/houseofapis/magento2-currencyapi-importer"
+  },
+  "require": {
+    "php": ">=8.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.6"
+  },
+  "suggest": {
+    "magento/module-directory": "Required for currency management functionality"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "autoload": {
+    "files": ["registration.php"],
+    "psr-4": {
+      "HouseOfApis\\CurrencyApi\\": ""
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "HouseOfApis\\CurrencyApi\\Test\\": "Test/",
+      "Magento\\": "Test/Stubs/Magento/",
+      "Laminas\\": "Test/Stubs/Laminas/"
+    }
+  },
+  "extra": {
+    "map": [
+      [
+        "*",
+        "HouseOfApis/CurrencyApi"
+      ]
+    ],
+    "magento": {
+      "module": "HouseOfApis_CurrencyApi"
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}
+
+

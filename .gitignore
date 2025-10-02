@@ -3,3 +3,6 @@ coverage/
 .DS_Store
 .vscode/
 .idea/
+.gitattributes
+CurrencyApi.zip
+build/

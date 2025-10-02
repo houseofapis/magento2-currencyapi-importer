@@ -1,6 +1,6 @@
-# CurrencyApi.net for Magento 2
+# Live Exchange Rates for Magento 2 using CurrencyApi.net
 
-A Magento 2 extension that integrates with CurrencyApi.net to provide real-time currency exchange rates.
+A Magento 2 extension that integrates with [CurrencyApi.net](https://currencyapi.net) to provide real-time currency exchange rates. A great alternative to Fixer.io.
 
 ## Features
 
@@ -15,34 +15,64 @@ A Magento 2 extension that integrates with CurrencyApi.net to provide real-time 
 
 ## Installation
 
-### Via Composer (Recommended)
+### Method 1: Composer from Packagist (Recommended)
 
 ```bash
 composer require houseofapis/magento2-currencyapi-importer
 ```
 
-### Manual Installation
+### Method 2: Composer from Magento Marketplace
+
+1. **Get your extension information**:
+   - Log in to [Commerce Marketplace](https://marketplace.magento.com) with your account
+   - Click **Your name** > **My Profile**
+   - Click **My Purchases**
+   - Find the extension and note the component name and version
+
+2. **Ensure your `composer.json` includes the Magento repository**:
+   ```json
+   "repositories": [
+       {
+           "type": "composer",
+           "url": "https://repo.magento.com/"
+       }
+   ]
+   ```
+
+3. **Install the extension with the specific version**:
+   ```bash
+   composer require houseofapis/magento2-currencyapi-importer:1.0.0
+   ```
+
+4. **Enter your authentication keys** when prompted (your public key is your username; your private key is your password)
+
+### Method 3: Manual Installation
 
 1. Download the extension files
 2. Copy to `app/code/HouseOfApis/CurrencyApi/`
-3. Run the following commands:
-   ```bash
-   php bin/magento module:enable HouseOfApis_CurrencyApi
-   php bin/magento setup:upgrade
-   php bin/magento cache:flush
-   ```
 
-## Configuration
+### Post-Installation Steps
 
-1. Go to **Stores > Configuration > Currency > Currency Rates**
-2. Select **CurrencyApi.net** from the "Import Service" dropdown
-3. Enter your API key from [CurrencyApi.net](https://currencyapi.net)
-4. Configure connection timeout if needed
-5. Save configuration
+After installing using any method above, run these commands:
 
-> Note:
-> - You must obtain an API key from [CurrencyApi.net](https://currencyapi.net). Creating an account and getting an API key is free.
-> - The free plan supports USD as the base currency only. To use a different base currency (for example EUR or GBP), you need a paid plan.
+```bash
+# Enable the module
+php bin/magento module:enable HouseOfApis_CurrencyApi
+
+# Update the database schema
+php bin/magento setup:upgrade
+
+# Compile dependency injection
+php bin/magento setup:di:compile
+
+# Verify the module is enabled
+php bin/magento module:status HouseOfApis_CurrencyApi
+
+# Clean the cache
+php bin/magento cache:clean
+```
+
+> **Note**: If you encounter any issues loading the storefront, run `php bin/magento cache:flush` to completely flush all caches.
 
 ## API Key
 
@@ -51,6 +81,30 @@ composer require houseofapis/magento2-currencyapi-importer
 Get your API key by creating a free account at [CurrencyApi.net](https://currencyapi.net):
 - Free plan: USD base currency only
 - Paid plans: Required to change the base currency (for example to EUR, GBP, etc.)
+
+## Configuration
+
+![Add Magento Api Key](docs/screenshots/magento_api_key.png "Add Api Key")
+
+1. Go to **Stores > Configuration > General > Currency Setup**
+2. Select **CurrencyApi.net**
+3. Enter your API key from [CurrencyApi.net](https://currencyapi.net)
+4. Configure connection timeout if needed
+5. Save configuration
+
+## Importing Currency Rates
+
+![Select CurrencyApi.net import service](docs/screenshots/magento_import.png "Import")
+
+1. Go to **Stores > Currency Rates**
+2. Click Import Service and select CurrencyApi.net
+3. Click the Import button
+
+![Save Imported Currencies](docs/screenshots/magento_import_success.png "Save")
+
+1. The new rates will now be imported
+2. Click Save Currency Rates to apply
+
 
 ## Requirements
 
@@ -65,6 +119,14 @@ Get your API key by creating a free account at [CurrencyApi.net](https://currenc
 |----------------|-------------------|---------|
 | 2.4.0 - 2.4.7  | 1.0.0            | ✅ Supported |
 | 2.4.8+         | 1.0.0            | ✅ Supported |
+
+## Currency List
+
+We supply up to 152 fiat currencies, cryptos and precious metals.
+
+By default, Magento does not support cryptos and precious metals and there maybe some old currencies that are available on Magento but not available from our API. 
+
+For a full list of the currencies we supply, head over to [our currency list](https://currencyapi.net/currency-list/) page.
 
 ## Development
 

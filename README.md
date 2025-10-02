@@ -40,11 +40,17 @@ composer require houseofapis/magento2-currencyapi-importer
 4. Configure connection timeout if needed
 5. Save configuration
 
+> Note:
+> - You must obtain an API key from [CurrencyApi.net](https://currencyapi.net). Creating an account and getting an API key is free.
+> - The free plan supports USD as the base currency only. To use a different base currency (for example EUR or GBP), you need a paid plan.
+
 ## API Key
 
-Get your free API key from [CurrencyApi.net](https://currencyapi.net):
+**You need an API key to use this extension.**
+
+Get your API key by creating a free account at [CurrencyApi.net](https://currencyapi.net):
 - Free plan: USD base currency only
-- Paid plans: Support for custom base currencies
+- Paid plans: Required to change the base currency (for example to EUR, GBP, etc.)
 
 ## Requirements
 

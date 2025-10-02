@@ -47,3 +47,14 @@ phpcs-report:
 	docker compose build magento-currencyapi-tests
 	docker compose run --rm magento-currencyapi-tests sh -lc "mkdir -p report && vendor/bin/phpcs --config-set installed_paths vendor/magento/magento-coding-standard,vendor/magento/php-compatibility-fork && vendor/bin/phpcs --standard=Magento2 --extensions=php,phtml --error-severity=10 --ignore-annotations --report=json --report-file=report/phpcs.json etc Model registration.php"
 
+clean-zip:
+	rm -rf build CurrencyApi.zip
+
+# Build a Marketplace-ready zip
+build-zip: clean-zip
+	mkdir -p build/HouseOfApis/CurrencyApi
+	# Use git archive to export the repo contents (honors .gitattributes)
+	git archive --format=tar HEAD | tar -x -C build/HouseOfApis/CurrencyApi
+	# Create the zip with proper nesting
+	cd build && zip -r ../CurrencyApi.zip HouseOfApis
+

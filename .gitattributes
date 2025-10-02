@@ -1,0 +1,9 @@
+/.gitignore export-ignore
+/.dockerignore export-ignore
+/Dockerfile export-ignore
+/docker-compose.yml export-ignore
+/Makefile export-ignore
+/Test export-ignore
+/phpunit.xml export-ignore
+/vendor export-ignore
+/.git export-ignore

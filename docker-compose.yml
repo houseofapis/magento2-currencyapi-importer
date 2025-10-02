@@ -6,5 +6,3 @@ services:
       - /app/vendor  # Exclude vendor from volume mount for better performance
     environment:
       - PHPUNIT_ENV=testing
-    # Default command can be overridden by `docker compose run`
-    command: sh -lc "${CMD:-vendor/bin/phpunit Test/Unit/ --verbose}"

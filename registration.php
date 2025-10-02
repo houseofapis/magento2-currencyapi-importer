@@ -7,5 +7,3 @@ if (!class_exists(\Magento\Framework\Component\ComponentRegistrar::class)) {
     'HouseOfApis_CurrencyApi',
     __DIR__
 );
-
-

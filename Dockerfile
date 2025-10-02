@@ -21,14 +21,11 @@ WORKDIR /app
 # Copy composer files
 COPY composer.* ./
 
-# Install dependencies
-RUN composer install --no-dev --optimize-autoloader
+# Install dependencies (including dev for tests and tools)
+RUN composer install
 
 # Copy source code
 COPY . .
-
-# Install dev dependencies for testing
-RUN composer install
 
 # Set default command
 CMD ["vendor/bin/phpunit", "Test/Unit/"]

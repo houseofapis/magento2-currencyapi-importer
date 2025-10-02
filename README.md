@@ -6,7 +6,7 @@ A Magento 2 extension that integrates with CurrencyApi.net to provide real-time 
 
 - Real-time currency exchange rates from CurrencyApi.net
 - Easy configuration through Magento admin
-- Support for all major currencies (160+ currencies)
+- Support for all major currencies
 - Automatic rate updates via cron
 - Secure API key storage
 - Error handling and retry logic

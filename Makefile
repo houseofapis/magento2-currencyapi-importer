@@ -52,9 +52,5 @@ clean-zip:
 
 # Build a Marketplace-ready zip
 build-zip: clean-zip
-	mkdir -p build/HouseOfApis/CurrencyApi
-	# Use git archive to export the repo contents (honors .gitattributes)
-	git archive --format=tar HEAD | tar -x -C build/HouseOfApis/CurrencyApi
-	# Create the zip with proper nesting
-	cd build && zip -r ../CurrencyApi.zip HouseOfApis
+	git archive --format=zip -o CurrencyApi.zip HEAD 
 

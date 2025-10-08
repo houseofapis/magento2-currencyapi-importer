@@ -1,4 +1,4 @@
-# Live Exchange Rates for Magento 2 using CurrencyAPI.net - User Guide
+# Real Time Currency Api Importer
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -96,7 +96,7 @@ Get your API key by creating a free account at [CurrencyAPI.net](https://currenc
 
 ## Configuration
 
-![Add Magento Api Key](screenshots/magento_api_key.png "Add Api Key")
+![Add Magento Api Key](https://currencyapi.net/images/magento/magento_api_key.png "Add Api Key")
 
 1. Go to **Stores > Configuration > General > Currency Setup**
 2. Select **CurrencyApi.net**
@@ -108,13 +108,13 @@ Get your API key by creating a free account at [CurrencyAPI.net](https://currenc
 
 ## Importing Currency Rates
 
-![Select CurrencyApi.net import service](screenshots/magento_import.png "Import")
+![Select CurrencyApi.net import service](https://currencyapi.net/images/magento/magento_import.png "Import")
 
 1. Go to **Stores > Currency Rates**
 2. Click Import Service and select CurrencyApi.net
 3. Click the Import button
 
-![Save Imported Currencies](screenshots/magento_import_success.png "Save")
+![Save Imported Currencies](https://currencyapi.net/images/magento/magento_import_success.png "Save")
 
 1. The new rates will now be imported
 2. Click Save Currency Rates to apply

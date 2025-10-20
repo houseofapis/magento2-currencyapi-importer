@@ -121,6 +121,21 @@ Get your API key by creating a free account at [CurrencyAPI.net](https://currenc
 
 ---
 
+## Importing Currency Rates Automatically (via Cron)
+
+To tell Magento to fetch currency rates from CurrencyApi.net automatically, we need to select CurrencyApi.net as the import service
+
+1. Go to **Go to Stores → Configuration → General → Currency Setup**
+2. Head to the Scheduled Import Settings section
+3. Ensure Enabled is set to Yes
+4. Under the Service dropdown, select "CurrencyApi.net"
+5. Select the time and frequency you want to update the rates
+6. Click Save Config
+
+![Automatic CurrencyApi Updates](https://currencyapi.net/images/magento/magento_select_cron.webp "Automatic CurrencyApi Updates")
+
+---
+
 ## Currency List
 
 We supply up to 152 fiat currencies, cryptos and precious metals.
